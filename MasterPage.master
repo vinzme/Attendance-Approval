@@ -1,0 +1,47 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Advance Reservation</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+<script> 
+if(!window.opener){ 
+newWin=window.open (this.location,'newwindow','toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,fullscreen=no,directories=no,status=no') 
+newWin.moveTo(0,0); 
+newWin.resizeTo(screen.availWidth,screen.availHeight) 
+window.opener='a'; 
+window.close(); 
+} 
+function ViewDoc() {
+ window.open('MdnBlank.aspx',null,'top=100,left=100,height=800,width=800,resizable=yes,scrollbars=yes')
+}
+function ViewNotes() {
+ window.open('MdnNotes.aspx',null,'top=100,left=100,height=200,width=440,resizable=no,scrollbars=no')
+}
+function ViewForm() {
+ window.open('MdnView.aspx',null,'top=10,left=10,height=800,width=980,resizable=yes,scrollbars=yes')
+}
+</script>    
+</head>
+<body style="background-color: aliceblue">
+    <form id="form1" runat="server">
+    <div class="header">
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+            <tr>
+                <td style="width: 100px; vertical-align: middle;">
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/images/ses_logo.png" /></td>
+                <td style="width: 100%; text-align: right;">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/images/ses_logo.png" />
+                    </td>
+            </tr>
+        </table>
+    </div>    
+    <div>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </div>
+    </form>
+</body>
+</html>
